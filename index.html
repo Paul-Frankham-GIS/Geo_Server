@@ -1,0 +1,27 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>GeoServer Base Map</title>
+ <link rel="stylesheet" href="https://gbr01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flnkd.in%2FgEjiBfBb&data=05%7C02%7CPaul.Frankham972%40mod.gov.uk%7C6fa62426349a4a55e26708dcd2a0385b%7Cbe7760ed5953484bae95d0a16dfa09e5%7C0%7C0%7C638616832795162876%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=aqQMTU6W%2Fk%2FvXyLXBaqaj8bn3d1WZ%2F3l8J8ZLDIhg48%3D&reserved=0" />  <script src="https://gbr01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flnkd.in%2Fgp52abe6&data=05%7C02%7CPaul.Frankham972%40mod.gov.uk%7C6fa62426349a4a55e26708dcd2a0385b%7Cbe7760ed5953484bae95d0a16dfa09e5%7C0%7C0%7C638616832795172917%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=e5ZBFkj30%2FlISkgOJHTivu5iz5jNURP4T%2FYppMIzbtI%3D&reserved=0"></script>
+ <style>
+  #map { height: 600px; }
+ </style>
+</head>
+<body>
+ <div id="map"></div>
+ <script>
+  var map = L.map('map').setView([0, 0], 2);
+  L.tileLayer('https://{s}.https://gbr01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flnkd.in%2FgFF3iY-x&data=05%7C02%7CPaul.Frankham972%40mod.gov.uk%7C6fa62426349a4a55e26708dcd2a0385b%7Cbe7760ed5953484bae95d0a16dfa09e5%7C0%7C0%7C638616832795180200%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=kpuIg3ybO4By7oXwoNCUgPKFb28nguPQHybyktrK0yM%3D&reserved=0', {  
+   maxZoom: 19,
+  }).addTo(map);
+  var wmsLayer = L.tileLayer.wms('http://localhost:8080/geoserver/wms', {  
+   layers: 'your_workspace:your_layer',  
+   format: 'image/png',  
+   transparent: true,  
+   attribution: "GeoServer"  
+  }).addTo(map);
+ </script>
+</body>
+</html>
+```
